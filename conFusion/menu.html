@@ -9,12 +9,13 @@
          content must come *after* these tags -->
     <title>Ristorante Con Fusion: Menu</title>
         <!-- Bootstrap -->
+    <!-- build:css styles/main.css -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="app/styles/bootstrap-social.css" rel="stylesheet">
     <link href="app/styles/mystyles.css" rel="stylesheet">
-
+    <!-- endbuild -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,7 +32,7 @@
                          dishes=[
                          {
                            name:'Uthapizza',
-                           image: 'images/uthapizza.png',
+                           image: 'app/images/uthapizza.png',
                            category: 'mains',
                            label:'Hot',
                            price:'4.99',
@@ -40,7 +41,7 @@
                         },
                         {
                            name:'Zucchipakoda',
-                           image: 'images/zucchipakoda.png',
+                           image: 'app/images/zucchipakoda.png',
                            category: 'appetizer',
                            label:'',
                            price:'1.99',
@@ -49,7 +50,7 @@
                         },
                         {
                            name:'Vadonut',
-                           image: 'images/vadonut.png',
+                           image: 'app/images/vadonut.png',
                            category: 'appetizer',
                            label:'New',
                            price:'1.99',
@@ -58,7 +59,7 @@
                         },
                         {
                            name:'ElaiCheese Cake',
-                           image: 'images/elaicheesecake.png',
+                           image: 'app/images/elaicheesecake.png',
                            category: 'dessert',
                            label:'',
                            price:'2.99',
@@ -89,7 +90,10 @@
               </div>
         </div>
     </div>
-    <script src="../bower_components/angular/angular.min.js"></script>
+    <!-- build:js scripts/main.js -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app/scripts/app.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>
