@@ -50,9 +50,11 @@ angular.module('confusionApp')
             };
         }])
 
-        .controller('DishDetailController', ['$scope', 'menuFactory', function($scope, menuFactory) {
-            $scope.dish = menuFactory.getDish(3);
-        }])
+	.controller('DishDetailController', ['$scope', '$routeParams', 'menuFactory', function($scope, $routeParams, menuFactory) {
+
+            	var dish= menuFactory.getDish(parseInt($routeParams.id,10));                        
+		$scope.dish = dish;
+                    }])
 
 .controller('DishCommentController', ['$scope', function($scope) {
     $scope.comment = {rating: 5, comment: "", author: "", date: ""}; //Step 1: Create a JavaScript object to hold the comment from the form
