@@ -50,20 +50,20 @@ angular.module('confusionApp')
             };
         }])
 
-	   .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
-            var dish= menuFactory.getDish(parseInt($stateParams.id,10));
-            $scope.dish = dish;
-        }])
+	.controller('DishDetailController', ['$scope', '$routeParams', 'menuFactory', function($scope, $routeParams, menuFactory) {
 
-        .controller('DishCommentController', ['$scope', function($scope) {
-            $scope.comment = {rating: 5, comment: "", author: "", date: ""}; //Step 1: Create a JavaScript object to hold the comment from the form
-            $scope.submitComment = function() { //Step 2: This is how you record the date
-            $scope.comment.date = new Date().toISOString();
-            $scope.dish.comments.push($scope.comment); // Step 3: Push your comment into the dish's comment array
-            $scope.commentForm.$setPristine(); //Step 4: reset your form to pristine
-            $scope.comment = {rating: 5, comment: "", author: "", date: "", show: false}; //Step 5: reset your JavaScript object that holds your comment
-            }
-          }
-        ])
+            var dish= menuFactory.getDish(parseInt($routeParams.id,10));                        $scope.dish = dish;
+                    }])
+
+.controller('DishCommentController', ['$scope', function($scope) {
+    $scope.comment = {rating: 5, comment: "", author: "", date: ""}; //Step 1: Create a JavaScript object to hold the comment from the form
+    $scope.submitComment = function() { //Step 2: This is how you record the date
+    $scope.comment.date = new Date().toISOString();
+    $scope.dish.comments.push($scope.comment); // Step 3: Push your comment into the dish's comment array
+    $scope.commentForm.$setPristine(); //Step 4: reset your form to pristine
+    $scope.comment = {rating: 5, comment: "", author: "", date: "", show: false}; //Step 5: reset your JavaScript object that holds your comment
+    }
+  }
+])
 
 ;
